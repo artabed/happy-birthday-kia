@@ -1,0 +1,153 @@
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+
+body {
+  background: linear-gradient(to bottom, #ffffff, #636363);
+  background-image: url(./img/bg.svg);
+  background-size: 100%;
+  max-height: 100vh;
+}
+
+/* html {
+  overflow-y: scroll;
+} */
+
+.bg {
+  width: inherit;
+  font-family: "Barriecito", system-ui;
+  background: linear-gradient(to right,
+      #ff0800 0%,
+      #ffff00 17%,
+      #f400fc 85%,
+      #004cff 68%,
+      #2aff00 34%,
+      #e401f4 51%,
+      #ff0800 100%);
+  -webkit-background-clip: text;
+  -webkit-animation: "slide" 5s infinite linear forwards;
+  background-size: 700px 150px;
+}
+
+@keyframes slide {
+  0% {
+    background-position-x: 0%;
+  }
+
+  100% {
+    background-position-x: 700px;
+  }
+}
+
+.text {
+  font-size: 128px;
+  text-align: center;
+  color: white;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 6px rgb(255, 255, 255);
+}
+
+.tape-header {
+  position: absolute;
+  top: 0;
+  z-index: -999;
+}
+
+.absolute {
+  position: absolute;
+  top: 0;
+}
+
+.relative {
+  position: relative;
+}
+
+.cake {
+  top: 400px;
+}
+
+.ballon {
+  position: absolute;
+  width: 75px;
+  height: 155.5px;
+  bottom: -160px;
+  transform-origin: 37.5px 0px;
+  object-fit: cover;
+}
+
+.yellow {
+  will-change: transform;
+  animation: float 5s 0s linear infinite;
+  left: 10%;
+}
+
+.green {
+  will-change: transform;
+  animation: float 5s 3s linear infinite;
+  left: 50%;
+}
+
+.blue {
+  will-change: transform;
+  animation: float 5s 4s linear infinite;
+  right: 5%;
+}
+
+.wind {
+  will-change: transform;
+  overflow: hidden;
+  width: 90vw;
+  height: 100vh;
+}
+
+.parentwind {
+  position: absolute;
+  width: 100%;
+  top: 100%;
+  animation: wind 10s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px) rotate(5deg);
+  }
+
+  100% {
+    transform: translateY(-200vh) rotate(0deg);
+  }
+}
+
+@keyframes wind {
+  0% {
+    transform: translateX(0px);
+  }
+
+  10% {
+    transform: translateX(10px);
+  }
+
+  30% {
+    transform: translateX(-5px);
+  }
+
+  66% {
+    transform: translateX(3px);
+  }
+
+  86% {
+    transform: translateX(-10px);
+  }
+
+  100% {
+    transform: translateX(0px);
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .cake {
+    top: 300px;
+  }
+
+  .text {
+    font-size: 50px;
+    -webkit-text-stroke: 2px rgb(255, 255, 255);
+  }
+}
