@@ -13,6 +13,10 @@
 </head>
 
 <body>
+    <audio id="music">
+        <source src="./music/Selamat-Ulang-Tahun.mp3" type="audio/ogg">
+        <source src="./music/Selamat-Ulang-Tahun.mp3" type="audio/mpeg">
+    </audio>
     <div class="container">
         <div class="bg text-center position-absolute">
             <div class="text">
@@ -52,6 +56,12 @@
             var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
             myModal.show();
         });
+
+        var myMusic = document.getElementById("music");
+        function play() {
+            myMusic.loop = true;
+            myMusic.play();
+        }
     </script>
 
 </body>
@@ -66,7 +76,7 @@
                                             -webkit-backdrop-filter: blur(50.5px) !important;">
             <div class="modal-body">
                 <div class="position-absolute top-50 start-50 translate-middle">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">BUKA</button>
+                    <button type="button" onclick="play()" class="btn btn-secondary" data-bs-dismiss="modal">BUKA</button>
                 </div>
             </div>
         </div>
